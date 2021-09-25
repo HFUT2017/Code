@@ -2,7 +2,7 @@ package _0210911
 
 // MaxmiumScore 给定数组 cards 和 cnt，其中 cards[i] 表示第 i 张卡牌上的数字。 请帮参赛选手计算最大的有效得分。若不存在获取有效得分的卡牌方案，则返回 0。
 //func MaxmiumScore(cards []int, cnt int) int {
-//	sort.Ints(cards)
+//	tsort.Ints(cards)
 //	sum := 0
 //	oushu := make([]int, len(cards))
 //	jishu := make([]int, len(cards))

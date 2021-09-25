@@ -6,7 +6,7 @@ package _0210923
 //	for i := 1; i <= n; i++ {
 //		ans = append(ans, strconv.Itoa(i))
 //	}
-//	sort.Strings(ans)
+//	tsort.Strings(ans)
 //	res, _ := strconv.Atoi(ans[k-1])
 //	return res
 //}

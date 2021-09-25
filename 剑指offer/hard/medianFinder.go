@@ -12,7 +12,7 @@ import "runtime/debug"
 //	Size int
 //}
 //
-///** initialize your data structure here. */
+///** initialize your Data_structure here. */
 //func Constructor() MedianFinder {
 //	return MedianFinder{
 //		Head: &ListNode{
@@ -64,7 +64,7 @@ type MedianFinder struct {
 	maxHeap []int
 }
 
-/** initialize your data structure here. */
+/** initialize your Data_structure here. */
 func Constructor() MedianFinder {
 	min := make([]int, 0)
 	max := make([]int, 0)

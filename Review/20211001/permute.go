@@ -1,0 +1,27 @@
+package _0211001
+
+func permute(nums []int) [][]int {
+	res := [][]int{}
+	temp := []int{}
+	used := make([]bool, len(nums))
+	var backTrack func()
+	backTrack = func() {
+		for i := 0; i < len(nums); i++ {
+			if len(temp) == len(nums) {
+				t := make([]int, len(temp))
+				copy(t, temp)
+				res = append(res, t)
+			}
+			if used[i] == true {
+				continue
+			}
+			used[i] = true
+			temp = append(temp, nums[i])
+			backTrack()
+			used[i] = false
+			temp = temp[:len(temp)-1]
+		}
+	}
+	backTrack()
+	return res
+}

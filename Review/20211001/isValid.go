@@ -6,12 +6,17 @@ func isValid(s string) bool {
 		if s[i] == '(' || s[i] == '[' || s[i] == '{' {
 			stack = append(stack, s[i])
 		} else {
+			if len(stack)==0{
+				return false
+			}
 			if s[i] == ')' && stack[len(stack)-1] == '(' {
 				stack = stack[:len(stack)-1]
 			} else if s[i] == ']' && stack[len(stack)-1] == '[' {
 				stack = stack[:len(stack)-1]
 			} else if s[i] == '}' && stack[len(stack)-1] == '{' {
 				stack = stack[:len(stack)-1]
+			}else{
+				stack=append(stack,s[i])
 			}
 		}
 	}

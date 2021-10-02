@@ -18,5 +18,6 @@ func generateParenthesis(n int) []string {
 			temp = temp[:len(temp)-1]
 		}
 	}
+	backTrack(0,0,"")
 	return res
 }

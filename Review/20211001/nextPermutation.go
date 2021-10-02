@@ -2,16 +2,18 @@ package _0211001
 
 import "sort"
 
-func nextPermutation(nums []int) {
-	i := len(nums) - 2
-	for nums[i] > nums[i+1] {
+func nextPermutation(nums []int)  {
+	n:=len(nums)
+	i:=n-2
+	for i>=0&&nums[i]>=nums[i+1]{
 		i--
 	}
-	j := len(nums) - 1
-	for nums[j] < nums[i] {
-		j--
+	if i>=0{
+		j:=n-1
+		for j>=0&&nums[i]>=nums[j]{
+			j--
+		}
+		nums[i],nums[j]=nums[j],nums[i]
 	}
-	nums[i], nums[j] = nums[j], nums[i]
-	sort.Ints(nums[i:])
-	return
+	sort.Ints(nums[i+1:])
 }

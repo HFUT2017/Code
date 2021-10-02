@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func mergeKList(lists []*ListNode) *ListNode {
+func mergeKLists(lists []*ListNode) *ListNode {
 	if len(lists) == 0 {
 		return nil
 	}
@@ -13,7 +13,7 @@ func mergeKList(lists []*ListNode) *ListNode {
 		return lists[0]
 	}
 	mid := len(lists) / 2
-	return merge(mergeKList(lists[:mid]), mergeKList(lists[mid:]))
+	return merge(mergeKLists(lists[:mid]), mergeKLists(lists[mid:]))
 }
 
 func merge(l1, l2 *ListNode) *ListNode {
@@ -28,6 +28,11 @@ func merge(l1, l2 *ListNode) *ListNode {
 			l2 = l2.Next
 		}
 		cur = cur.Next
+	}
+	if l1!=nil{
+		cur.Next=l1
+	}else{
+		cur.Next=l2
 	}
 	return dummyHead.Next
 }

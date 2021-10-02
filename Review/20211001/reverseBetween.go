@@ -16,14 +16,14 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	return dummyHead.Next
 }
 
-func reverseB(head *ListNode, tail *ListNode) (*ListNode, *ListNode) {
-	pre := tail.Next
-	cur := head
-	for pre != tail {
-		next := cur.Next
-		cur.Next = pre
-		pre = cur
-		cur = next
-	}
-	return tail, head
-}
+//func reverseB(head *ListNode, tail *ListNode) (*ListNode, *ListNode) {
+//	pre := tail.Next
+//	cur := head
+//	for pre != tail {
+//		next := cur.Next
+//		cur.Next = pre
+//		pre = cur
+//		cur = next
+//	}
+//	return tail, head
+//}

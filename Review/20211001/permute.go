@@ -6,12 +6,12 @@ func permute(nums []int) [][]int {
 	used := make([]bool, len(nums))
 	var backTrack func()
 	backTrack = func() {
+		if len(temp) == len(nums) {
+			t := make([]int, len(temp))
+			copy(t, temp)
+			res = append(res, t)
+		}
 		for i := 0; i < len(nums); i++ {
-			if len(temp) == len(nums) {
-				t := make([]int, len(temp))
-				copy(t, temp)
-				res = append(res, t)
-			}
 			if used[i] == true {
 				continue
 			}

@@ -6,7 +6,7 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	for i := 0; i < left-1; i++ {
 		pre = pre.Next
 	}
-	tail := head
+	tail := dummyHead
 	for i := 0; i < right; i++ {
 		tail = tail.Next
 	}
@@ -16,14 +16,14 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	return dummyHead.Next
 }
 
-//func reverseB(head *ListNode, tail *ListNode) (*ListNode, *ListNode) {
-//	pre := tail.Next
-//	cur := head
-//	for pre != tail {
-//		next := cur.Next
-//		cur.Next = pre
-//		pre = cur
-//		cur = next
-//	}
-//	return tail, head
-//}
+func reverseB(head *ListNode, tail *ListNode) (*ListNode, *ListNode) {
+	pre := tail.Next
+	cur := head
+	for pre != tail {
+		next := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = next
+	}
+	return tail, head
+}

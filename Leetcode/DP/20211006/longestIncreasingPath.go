@@ -33,39 +33,39 @@ package _0211006
 
 //正确解法:记忆化回溯
 func longestIncreasingPath(matrix [][]int) int {
-	dir:=[][]int{{-1,0},{1,0},{0,-1},{0,1}}
-	if len(matrix)==0||len(matrix[0])==0{
+	dir := [][]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
+	if len(matrix) == 0 || len(matrix[0]) == 0 {
 		return 0
 	}
-	mem:=make([][]int,len(matrix))
-	var dfs func(matrix [][]int,i,j int,mem [][]int) int
-	dfs=func(matrix [][]int,i,j int,mem [][]int) int{
-		if mem[i][j]!=0{
+	mem := make([][]int, len(matrix))
+	var dfs func(matrix [][]int, i, j int, mem [][]int) int
+	dfs = func(matrix [][]int, i, j int, mem [][]int) int {
+		if mem[i][j] != 0 {
 			return mem[i][j]
 		}
 		mem[i][j]++
-		for _,value:=range dir{
-			newI,newJ:=i+value[0],j+value[1]
-			if newI>=0&&newJ>=0&&newI<len(matrix)&&newJ<len(matrix[0])&&matrix[newI][newJ]>matrix[i][j]{
-				mem[i][j]=max(mem[i][j],dfs(matrix,newI,newJ,mem)+1)
+		for _, value := range dir {
+			newI, newJ := i+value[0], j+value[1]
+			if newI >= 0 && newJ >= 0 && newI < len(matrix) && newJ < len(matrix[0]) && matrix[newI][newJ] > matrix[i][j] {
+				mem[i][j] = max(mem[i][j], dfs(matrix, newI, newJ, mem)+1)
 			}
 		}
 		return mem[i][j]
 	}
-	for i:=0;i<len(mem);i++{
-		mem[i]=make([]int,len(matrix[i]))
+	for i := 0; i < len(mem); i++ {
+		mem[i] = make([]int, len(matrix[i]))
 	}
-	res:=0
-	for i:=0;i<len(matrix);i++{
-		for j:=0;j<len(matrix[i]);j++{
-			res=max(res,dfs(matrix,i,j,mem))
+	res := 0
+	for i := 0; i < len(matrix); i++ {
+		for j := 0; j < len(matrix[i]); j++ {
+			res = max(res, dfs(matrix, i, j, mem))
 		}
 	}
 	return res
 }
 
-func max(a,b int) int{
-	if a>b{
+func max(a, b int) int {
+	if a > b {
 		return a
 	}
 	return b

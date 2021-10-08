@@ -9,10 +9,10 @@ func MinFallingPathSum2(grid [][]int) int {
 	}
 
 	res := math.MaxInt32
-	for i:=1;i<=n;i++ {
-		for j:=0;j<=n;j++ {
+	for i := 1; i <= n; i++ {
+		for j := 0; j <= n; j++ {
 			temp := math.MaxInt32
-			for k:=0;k<=n;k++ {
+			for k := 0; k <= n; k++ {
 				if k == j {
 					continue
 				}

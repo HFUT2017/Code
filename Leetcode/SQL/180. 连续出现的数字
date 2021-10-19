@@ -1,0 +1,7 @@
+SELECT DISTINCT Num "ConsecutiveNums"
+FROM (
+    SELECT  Num,(row_number() OVER (ORDER BY id ASC) - row_number() OVER (PARTITION BY Num ORDER BY id ASC)) AS series_id
+    FROM Logs
+) tab
+GROUP BY Num, series_id
+HAVING COUNT(1) >= 3

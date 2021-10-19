@@ -1,0 +1,3 @@
+delete a
+from person as a inner join person as b
+where a.email = b.email and a.id > b.id

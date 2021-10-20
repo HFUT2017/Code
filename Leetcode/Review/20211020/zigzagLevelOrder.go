@@ -1,0 +1,39 @@
+package _0211020
+
+func zigzagLevelOrder(root *TreeNode) [][]int {
+	left, right := []*TreeNode{root}, []*TreeNode{}
+	res := [][]int{}
+	if root == nil {
+		return res
+	}
+	for len(left) != 0 || len(right) != 0 {
+		temp := []int{}
+		if len(left) != 0 {
+			for len(left) != 0 {
+				node := left[len(left)-1]
+				temp = append(temp, node.Val)
+				if node.Left != nil {
+					right = append(right, node.Left)
+				}
+				if node.Right != nil {
+					right = append(right, node.Right)
+				}
+				left = left[:len(left)-1]
+			}
+		} else {
+			for len(right) != 0 {
+				node := right[len(right)-1]
+				temp = append(temp, node.Val)
+				if node.Right != nil {
+					left = append(left, node.Right)
+				}
+				if node.Left != nil {
+					left = append(left, node.Left)
+				}
+				right = right[:len(right)-1]
+			}
+		}
+		res = append(res, temp)
+	}
+	return res
+}

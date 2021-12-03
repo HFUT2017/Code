@@ -21,7 +21,7 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.0.1 // indirect
-	github.com/google/uuid v1.3.0 // indirect
+	github.com/google/uuid v1.3.0
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
@@ -30,6 +30,7 @@ require (
 	github.com/olivere/elastic/v7 v7.0.29
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/prometheus/client_golang v1.11.0 // indirect
+	github.com/prometheus/common v0.26.0
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/samuel/go-zookeeper v0.0.0-20201211165307-7117e9ea2414
 	github.com/soheilhy/cmux v0.1.5 // indirect
@@ -41,10 +42,15 @@ require (
 	golang.org/x/net v0.0.0-20210614182718-04defd469f4e
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac // indirect
 	google.golang.org/grpc v1.33.2
+	gorm.io/driver/mysql v1.2.0
+	gorm.io/driver/sqlite v1.2.6 // indirect
+	gorm.io/gorm v1.22.3
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
 
 replace (
 	github.com/coreos/bbolt => go.etcd.io/bbolt v1.3.4
-	google.golang.org/grpc v1.33.2 => google.golang.org/grpc v1.26.0
+	github.com/golang/protobuf v1.5.2 => github.com/golang/protobuf v1.3.2
+	google.golang.org/grpc v1.33.2 => google.golang.org/grpc v1.24.0
+
 )

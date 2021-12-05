@@ -36,5 +36,9 @@ func TestFindNthDigit(t *testing.T) {
 }
 
 func TestLargestSumAfterKNegations(t *testing.T) {
-	println(LargestSumAfterKNegations([]int{-4,-2,-3}, 4))
+	println(LargestSumAfterKNegations([]int{-4, -2, -3}, 4))
+}
+
+func TestSuperPow(t *testing.T) {
+
 }

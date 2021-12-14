@@ -42,3 +42,13 @@ func TestLargestSumAfterKNegations(t *testing.T) {
 func TestSuperPow(t *testing.T) {
 
 }
+
+func TestColorBorder(t *testing.T) {
+	grid := [][]int{{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}
+	ColorBorder(grid, 1, 1, 2)
+}
+
+func TestMaxIncreaseKeepingSkyline(t *testing.T) {
+	grid := [][]int{{3, 0, 8, 4}, {2, 4, 5, 7}, {9, 2, 6, 3}, {0, 3, 1, 0}}
+	println(MaxIncreaseKeepingSkyline(grid))
+}

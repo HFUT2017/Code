@@ -63,3 +63,9 @@ func TestLoudAndRich(t *testing.T) {
 	quiet := []int{3, 2, 5, 4, 6, 1, 7, 0}
 	LoudAndRich(richer, quiet)
 }
+
+func TestMakeConnected(t *testing.T) {
+	n := 6
+	nums := [][]int{{0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}}
+	println(MakeConnected(n, nums))
+}

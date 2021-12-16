@@ -69,3 +69,10 @@ func TestMakeConnected(t *testing.T) {
 	nums := [][]int{{0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}}
 	println(MakeConnected(n, nums))
 }
+
+func TestVisiblePoints(t *testing.T) {
+	points := [][]int{{0, 0}, {0, 2}}
+	angle := 90
+	location := []int{1, 1}
+	println(VisiblePoints(points, angle, location))
+}
